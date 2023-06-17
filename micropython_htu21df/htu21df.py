@@ -45,7 +45,7 @@ class HTU21DF:
     .. code-block:: python
 
         from machine import Pin, I2C
-        import htu21df
+        from micropython_htu21df import htu21df
 
     Once this is done you can define your `machine.I2C` object and define your sensor object
 
@@ -57,6 +57,9 @@ class HTU21DF:
     Now you have access to the attributes
 
     .. code-block:: python
+
+        temp = htu.temperature
+        rh = htu.humidity
 
     """
 
