@@ -28,22 +28,6 @@ _WRITE_USER1 = const(0xE6)
 _TEMP_RH_RES = (0, 1, 128, 129)
 
 
-class User_Register:
-    def __init__(self) -> None:
-        self.bit_mask = 0b10000001
-        self._value = 0b0
-
-    @property
-    def register_value(self) -> int:
-        return self._value & self.bit_mask
-
-    @register_value.setter
-    def register_value(self, val: int) -> None:
-        reg = self._value & ~self.bit_mask
-        reg |= val
-        self._value = reg
-
-
 class HTU21DF:
     """Driver for the HTU21DF Sensor connected over I2C.
 
@@ -74,8 +58,6 @@ class HTU21DF:
     .. code-block:: python
 
     """
-
-    resolution = User_Register()
 
     def __init__(self, i2c, address: int = 0x40) -> None:
         self._i2c = i2c
@@ -149,7 +131,12 @@ class HTU21DF:
 
         """
         data = bytearray(1)
-        values = {0x00: "RH=0.04, T=0.01", 0x01: "RH=0.7, T=0.04", 0x80: "RH=0.17, T=0.02", 0x81: "RH=0.08, T=0.08"}
+        values = {
+            0x00: "RH=0.04, T=0.01",
+            0x01: "RH=0.7, T=0.04",
+            0x80: "RH=0.17, T=0.02",
+            0x81: "RH=0.08, T=0.08",
+        }
 
         self._i2c.writeto(self._address, bytes([_READ_USER1]), False)
         self._i2c.readfrom_into(self._address, data)
@@ -168,7 +155,8 @@ class HTU21DF:
         reg |= val
         self._i2c.writeto(self._address, bytes([_WRITE_USER1, reg]), False)
 
-    def _crc(self, data: bytearray) -> int:
+    @staticmethod
+    def _crc(data: bytearray) -> int:
         crc = 0
         for byte in data:
             crc ^= byte
