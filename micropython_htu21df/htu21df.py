@@ -6,7 +6,7 @@
 `htu21df`
 ================================================================================
 
-MicroPython HTU21D-F Temperature & Humidity
+MicroPython HTU21D-F Temperature & Humidity driver
 
 
 * Author(s): ktown, Jose D. Montoya
