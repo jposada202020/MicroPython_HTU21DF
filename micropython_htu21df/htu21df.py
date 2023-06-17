@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2018 ktown for Adafruit Industries
 # SPDX-FileCopyrightText: Copyright (c) 2023 Jose D. Montoya
 #
 # SPDX-License-Identifier: MIT
@@ -8,7 +9,7 @@
 MicroPython HTU21D-F Temperature & Humidity
 
 
-* Author(s): Jose D. Montoya
+* Author(s): ktown, Jose D. Montoya
 
 
 """
