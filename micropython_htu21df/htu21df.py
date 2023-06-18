@@ -51,7 +51,7 @@ class HTU21DF:
 
     .. code-block:: python
 
-        i2c = I2C(sda=Pin(2), scl=Pin(3))
+        i2c = I2C(1, sda=Pin(2), scl=Pin(3))
         htu21df = htu21df.HTU21DF(i2c)
 
     Now you have access to the attributes
