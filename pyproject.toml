@@ -40,7 +40,7 @@ classifiers = [
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools]
-py-modules = ["htu21df"]
+packages = ["micropython_htu21df"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
