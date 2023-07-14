@@ -20,12 +20,9 @@ authors = [
 urls = {Homepage = "https://github.com/jposada202020/MicroPython_HTU21DF"}
 keywords = [
     "sensor",
-    "micropython",
     "htu21df",
-    "Sensortemperature",
+    "temperature",
     "humidity",
-    "htu21df",
-    "sensor",
     "micropython",
 ]
 license = {text = "MIT"}
