@@ -1,4 +1,4 @@
-HTU21DF
+MicroPython HTU21DF Driver
 =========================================
 
 
